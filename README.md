@@ -25,3 +25,7 @@ Execute `pnpm test`. This also generates a coverage report in the console and in
 ## Final Thoughts
 
 Although this is a reasonable stab at the task, it could certainly be more robust. For one thing, there are no integration tests, so the actual Express API and task scheduler are not being tested (including the exit after ten consecutive erroneous calls to the CSRNG API functionality). However, are we testing business logic, or testing Express and/or Toad Scheduler? There's an argument that the tests in place are good enough. I haven't added eslint either, which I would usually put in place and have it check/fix staged files in the same way Prettier is run.
+
+## Live Deployment
+
+The app can be viewed running at [https://random-average.onrender.com](https://random-average.onrender.com). It's only a free tier 512MB Render instance, so when the number store gets too full, the app will crash and restart. Be interesting to see how long that takes to be honest...
