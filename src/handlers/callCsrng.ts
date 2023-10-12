@@ -21,7 +21,7 @@ export const callCsrng = async (): Promise<boolean> => {
 
     if (responseJson === undefined || responseJson.status === "error") {
       if (responseJson !== undefined && responseJson.code === "5") {
-        callCsrngLogger.debug(`CSRNG API limit exceeded`);
+        callCsrngLogger.debug("CSRNG API limit exceeded");
 
         return true;
       }
