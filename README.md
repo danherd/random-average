@@ -1,6 +1,6 @@
 # Random Average
 
-Provides a single HTTP GET endpoint that returns the average (specifically, the [arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)) of an array of random numbers, fetched approximately every second from the [Cryptographically Secure Random Number Generator (CSRNG) API](https://csrng.net/).
+Provides a HTTP GET endpoint that returns the average (specifically, the [arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)) of an array of random numbers, fetched approximately every second from the [Cryptographically Secure Random Number Generator (CSRNG) API](https://csrng.net/). There is also a secondary HTTP GET endpoint to return to count of a specified number in the numbers retrieved so far.
 
 ## Getting Started / Prerequisites
 
@@ -12,7 +12,7 @@ Install the dependencies by running `pnpm install`. This also installs a couple 
 
 ## Running For Development
 
-Execute `pnpm watch`. This runs the HTTP and scheduler services and auto-reloads when it detects a change in any of the source files. To view the arithmetic mean of all the numbers retrieved so far by the scheduler from the CSRNG API, simply make a HTTP GET request to [http://localhost:3000](http://localhost:3000).
+Execute `pnpm watch`. This runs the HTTP and scheduler services and auto-reloads when it detects a change in any of the source files. To view the arithmetic mean of all the numbers retrieved so far by the scheduler from the CSRNG API, simply make a HTTP GET request to [http://localhost:3000](http://localhost:3000). The get the number of times a specific number has been retrieved so far, make a HTTP GET request to [http://localhost:3000/count?number={num}](http://localhost:3000/count?number={num}), where `{num}` is the number you wish to check.
 
 ## Building For Production
 

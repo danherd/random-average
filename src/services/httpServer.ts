@@ -3,6 +3,7 @@ import express, { Express, Request } from "express";
 import * as expressWinston from "express-winston";
 import { numberStore } from "@stores/numberStore";
 import { getAverage } from "@handlers/getAverage";
+import { getNumberCount } from "@handlers/getNumberCount";
 import { logger } from "@services/logger";
 
 const serverLogger = logger.child({ service: "httpServer" });
@@ -37,6 +38,9 @@ export const setupHttpServer = (): void => {
 
   app.get("/", (request, response) => {
     return getAverage(request, response, numberStore);
+  });
+  app.get("/count", (request, response) => {
+    return getNumberCount(request, response, numberStore);
   });
 
   app.listen(port, () => {
