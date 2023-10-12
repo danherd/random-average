@@ -10,7 +10,6 @@ export const getAverage = (
   response: Response,
   numberStore: NumberStore,
 ) => {
-  getAverageLogger.warn(numberStore);
   const average = arrayAverage(numberStore);
 
   getAverageLogger.info(
