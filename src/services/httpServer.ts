@@ -1,6 +1,7 @@
 /* c8 ignore start */
 import express, { Express, Request } from "express";
 import * as expressWinston from "express-winston";
+import { numberStore } from "@stores/numberStore";
 import { getAverage } from "@handlers/getAverage";
 import { logger } from "@services/logger";
 
@@ -34,7 +35,9 @@ export const setupHttpServer = (): void => {
     }),
   );
 
-  app.get("/", getAverage);
+  app.get("/", (request, response) => {
+    return getAverage(request, response, numberStore);
+  });
 
   app.listen(port, () => {
     serverLogger.log("info", `HTTP server listening on port ${port}`);
