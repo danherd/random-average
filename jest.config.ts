@@ -20,7 +20,7 @@ const config: JestConfigWithTsJest = {
   modulePaths: ["<rootDir>/src"],
   moduleNameMapper: {
     "^@(handlers|services|stores|utils)/(.*)$": "<rootDir>/src/$1/$2",
-    "^@types$": "rootDir>/src/types",
+    "^@types$": "<rootDir>/src/types",
   },
   preset: "ts-jest",
   testEnvironment: "node",
